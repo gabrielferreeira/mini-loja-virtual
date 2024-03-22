@@ -1,0 +1,245 @@
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 80px;
+  height: 100%;
+  background-color: var(--bg-header);
+  transition: all 0.3s ease-in-out;
+}
+
+.sidebar-menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 100%;
+  padding: 2rem 1rem;
+}
+
+.menu {
+  background: transparent;
+  color: var(--font-color-light);
+  font-size: 1.6rem;
+  padding: 0.4rem;
+  border-radius: 0.4rem;
+  transition: background 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.menu:hover {
+  background-color: var(--bg-hover);
+}
+
+.menu-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.menu-itens {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.8rem 0.5rem;
+  border-radius: 0.4rem;
+  transition: background 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.menu-itens.profile {
+  display: none;
+}
+
+.menu-itens:hover,
+.menu-itens.selected {
+  background-color: var(--bg-hover);
+}
+
+.quantity-item-cart {
+  position: absolute;
+  top: 7px;
+  right: 10px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: var(--bg-color);
+  color: var(--font-color-dark);
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-itens a {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 0.1rem;
+  color: var(--font-color-light);
+}
+
+.menu-itens a .menu-icon i {
+  font-size: 1.2rem;
+}
+
+.menu-itens a .menu-text {
+  text-align: center;
+  font-size: 0.6rem;
+  font-weight: 500;
+}
+
+.perfil {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.1rem;
+  padding: 0.4rem;
+  border-radius: 0.4rem;
+  transition: background 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.perfil:hover {
+  background-color: var(--bg-hover);
+}
+
+.perfil figure img {
+  width: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.perfil .name-user {
+  color: var(--font-color-light);
+  font-size: 0.6rem;
+  font-weight: 500;
+}
+
+/* ACTIVE */
+.sidebar.active {
+  width: 300px;
+}
+
+.sidebar.active .sidebar-menu {
+  align-items: flex-start;
+}
+
+.sidebar.active .menu-links {
+  width: 100%;
+  align-items: flex-start;
+}
+
+.sidebar.active .menu-itens {
+  width: 100%;
+  align-items: center;
+}
+
+.sidebar.active .menu-itens .quantity-item-cart {
+  top: 23px;
+}
+
+.sidebar.active .menu-itens a {
+  gap: 0.5rem;
+  flex-direction: row;
+}
+
+.sidebar.active .menu-itens a .menu-icon i {
+  font-size: 1.5rem;
+}
+
+.sidebar.active .menu-itens a .menu-text {
+  font-size: 1rem;
+}
+
+.sidebar.active .perfil {
+  width: 100%;
+  justify-content: flex-start;
+  flex-direction: row;
+  gap: 0.5rem;
+}
+
+.sidebar.active .perfil figure img {
+  width: 3rem;
+  height: 3rem;
+}
+
+.sidebar.active .perfil .name-user {
+  font-size: 1rem;
+}
+
+@media (max-width: 425px) {
+  .sidebar {
+    position: fixed;
+    top: auto;
+    bottom: 0;
+    width: 100%;
+    height: 70px;
+    padding: 0 2%;
+    z-index: 99;
+    box-shadow: var(--shadow);
+    border-top-left-radius: 0.6rem;
+    border-top-right-radius: 0.6rem;
+  }
+
+  .sidebar-menu {
+    width: 100%;
+    height: 70px;
+    flex-direction: row;
+    justify-content: center;
+    padding: 0;
+  }
+
+  .menu,
+  .perfil {
+    display: none;
+  }
+
+  .menu-links {
+    flex-direction: row;
+    align-items: center;
+    gap: 0.8rem;
+  }
+
+  .menu-itens {
+    padding: 0;
+  }
+
+  .menu-itens:hover,
+  .menu-itens.selected {
+    background: transparent;
+  }
+
+  .menu-itens a {
+    gap: 0;
+  }
+
+  .menu-itens a .menu-icon i {
+    font-size: 1.5rem;
+  }
+
+  .quantity-item-cart {
+    top: -1px;
+    right: 3px;
+  }
+
+  .menu-itens.profile {
+    display: block;
+  }
+
+  .menu-itens.profile figure img {
+    width: 1.7rem;
+    height: 1.7rem;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .menu-itens.profile .menu-text {
+    margin-top: 0.2rem;
+  }
+}
